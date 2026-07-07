@@ -1,9 +1,10 @@
+import { useLocalStorage } from './useLocalStorage';
 import type {TestCase, TestFormValues} from '../types/test.ts';
-import {useState} from 'react';
 
+const STORAGE_KEY = 'tests';
 
 export function useTests() {
-    const [tests, setTests] = useState<TestCase[]>([]);
+    const [tests, setTests] = useLocalStorage<TestCase[]>(STORAGE_KEY, []);
 
     const addTest = (values: TestFormValues) => {
         const newTest: TestCase = {
