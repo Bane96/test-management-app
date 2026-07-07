@@ -7,6 +7,12 @@ export interface TestCase {
     lastModified: string;
 }
 
+export type SortField = 'name' | 'status' | 'lastModified';
+
+export interface SortConfig {
+    field: SortField;
+    direction: SortDirection;
+}
 
 export type StatusFilter = TestStatus | 'all';
 
