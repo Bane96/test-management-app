@@ -8,6 +8,7 @@ export interface TestCase {
 }
 
 export type SortField = 'name' | 'status' | 'lastModified';
+export type SortDirection = 'asc' | 'desc';
 
 export interface SortConfig {
     field: SortField;
