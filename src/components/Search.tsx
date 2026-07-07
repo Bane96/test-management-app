@@ -9,7 +9,7 @@ export function Search({value, onChange}: SearchProps) {
         onChange(event.target.value);
     };
     return (
-        <div>
+        <div className="search-bar">
             <label htmlFor="search">Search tests by name</label>
             <input
                 id="search"

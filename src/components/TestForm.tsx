@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import type {TestFormValues, TestStatus} from '../types/test.ts';
 
 interface TestFormProps {
@@ -9,19 +9,20 @@ interface TestFormProps {
 
 const STATUS_OPTIONS: TestStatus[] = ['waiting', 'passed', 'failed', 'skipped'];
 
-export function TestForm({initialValues, onSubmit, onCancel}: TestFormProps) {
+export function TestForm({ initialValues, onSubmit, onCancel }: TestFormProps) {
     const [name, setName] = useState(initialValues?.name ?? '');
     const [status, setStatus] = useState<TestStatus>(initialValues?.status ?? 'waiting');
 
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = (event: React.SyntheticEvent) => {
         event.preventDefault();
         if (!name.trim()) return;
-        onSubmit({name: name.trim(), status});
+        onSubmit({ name: name.trim(), status });
     };
 
     return (
+        <div className="test-form-overlay" role="dialog" aria-modal="true">
             <form className="test-form" onSubmit={handleSubmit}>
-                <h2>{initialValues ? 'Edit Test' : 'New Test'}</h2>
+                <h3>{initialValues ? 'Edit Test' : 'New Test'}</h3>
 
                 <label htmlFor="name">Name</label>
                 <input
@@ -40,9 +41,10 @@ export function TestForm({initialValues, onSubmit, onCancel}: TestFormProps) {
                 </select>
 
                 <div className="test-form__actions">
-                    <button type="button" onClick={onCancel}>Cancel</button>
-                    <button type="submit">Save Test</button>
+                    <button type="button" className="btn btn--primary" onClick={onCancel}>Cancel</button>
+                    <button type="submit" className="btn btn--primary">Save Test</button>
                 </div>
             </form>
+        </div>
     );
 }

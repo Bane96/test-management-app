@@ -1,0 +1,30 @@
+@import 'base/variables.css';
+@import 'pages/tests/toolbar.css';
+@import 'pages/tests/test-table.css';
+@import 'pages/tests/test-form.css';
+@import './components/button.css';
+@import './components/label.css';
+@import './components/empty_state.css';
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+    font-size: var(--font-size-base);
+    color: var(--color-text);
+    background: var(--color-background);
+}
+
+.app {
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: var(--space-lg);
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin-bottom: var(--space-lg);
+}

@@ -9,7 +9,7 @@ const STATUS_OPTIONS: StatusFilter[] = ['all', 'waiting', 'passed', 'failed', 's
 
 export function StatusFilter({ value, onChange }: StatusFilterProps) {
     return (
-        <div>
+        <div className="status-filter">
             <label htmlFor="status-filter">Filter by status</label>
             <select
                 id="status-filter"

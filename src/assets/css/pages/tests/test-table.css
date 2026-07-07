@@ -1,0 +1,37 @@
+.test-table-wrapper {
+    overflow-x: auto;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+}
+
+.test-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--color-surface);
+}
+
+.test-table th,
+.test-table td {
+    padding: var(--space-sm) var(--space-md);
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+    white-space: nowrap;
+}
+
+.test-table th {
+    background: var(--color-background);
+    font-weight: 600;
+}
+
+.test-table th button {
+    background: none;
+    border: none;
+    font: inherit;
+    font-weight: 600;
+    padding: 0;
+    color: var(--color-text);
+}
+
+.test-table tbody tr:hover {
+    background: var(--color-background);
+}
