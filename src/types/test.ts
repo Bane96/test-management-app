@@ -17,3 +17,5 @@ export interface SortConfig {
 
 export type StatusFilter = TestStatus | 'all';
 
+
+export type TestFormValues = Pick<TestCase, 'name' | 'status'>;
